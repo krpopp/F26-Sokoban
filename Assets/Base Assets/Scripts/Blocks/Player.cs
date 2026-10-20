@@ -5,7 +5,7 @@ public class Player : Block
 {
 
     [SerializeField]
-    protected Animator myAnim;
+    private Animator myAnim;
 
     private Vector2 inputVector;
     private InputAction inputMove;
@@ -20,7 +20,7 @@ public class Player : Block
         if (State == MoveStates.idle) MoveInput();
     }
 
-    protected virtual void MoveInput()
+    private void MoveInput()
     {
 
         inputVector = inputMove.ReadValue<Vector2>();
@@ -32,22 +32,18 @@ public class Player : Block
         if (inputVector == Vector2.up)
         {
             if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.back);
-            Debug.Log("up");
         } 
         if (inputVector == Vector2.down)
         {
             if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.forward);
-            Debug.Log("down");
         } 
         if (inputVector == Vector2.left)
         {
             if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.left);
-            Debug.Log("left");
         } 
         if (inputVector == Vector2.right)
         {
             if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.right);
-            Debug.Log("right");
         }
     }
     
