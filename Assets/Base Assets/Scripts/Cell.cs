@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-
-    //this script tracks cell data
-    
     private GameObject containObj = null;
     public GameObject ContainObj
     {
