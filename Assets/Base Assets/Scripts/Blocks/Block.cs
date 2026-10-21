@@ -12,7 +12,7 @@ public class Block : MonoBehaviour
     public float speed;
     [SerializeField]
     private float lerpSnapDist;
-    private float lerpTime = 0;
+    private float lerpTime;
     private Vector3 startPos = Vector3.zero;
     public Vector3 targetPos = Vector3.zero;
     // reference to the currently running move coroutine so it can be stopped safely
@@ -35,11 +35,8 @@ public class Block : MonoBehaviour
         moving
     }
 
-    public MoveStates state;
-    public MoveStates State { get => state; set => state = value; }
-
+    public MoveStates State { get; set; }
     
-
     protected virtual void Start()
     {
         startPos = transform.position;
@@ -68,15 +65,6 @@ public class Block : MonoBehaviour
             }
             State = MoveStates.idle;
         }
-        return false;
-    }
-
-    /// <summary>
-    /// Checks how close the target position is to a compared position
-    /// </summary>
-    public bool CheckLerpDist(Vector3 _comparePos, float _maxVal)
-    {
-        if (Vector3.Distance(_comparePos, targetPos) < _maxVal) return true;
         return false;
     }
 
@@ -165,7 +153,6 @@ public class Block : MonoBehaviour
     #endregion
 
     #region Grid Information Methods
-
     /// <summary>
     /// Sets parent grid cell and initial grid position
     /// </summary>

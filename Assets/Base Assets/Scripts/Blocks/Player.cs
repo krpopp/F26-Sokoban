@@ -10,8 +10,9 @@ public class Player : Block
     private Vector2 inputVector;
     private InputAction inputMove;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         inputMove = InputSystem.actions.FindAction("Move");
     }
     
@@ -46,8 +47,6 @@ public class Player : Block
             if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.right);
         }
     }
-    
-    
 
     protected override void StartMove(Cell newParent, Vector2 _delta)
     {
