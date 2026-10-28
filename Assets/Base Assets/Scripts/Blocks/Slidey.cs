@@ -10,7 +10,8 @@ public class Slidey : Block
 
     private void Slide(Vector2 _delta)
     {
-        CheckMove(_delta);
+        if (!CheckMove(_delta))
+            Debug.Log("explode");
     }
 
 }
