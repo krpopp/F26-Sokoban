@@ -32,11 +32,11 @@ public class Player : Block
     {
         if (inputVector == Vector2.up)
         {
-            if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.back);
+            if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.forward);
         } 
         if (inputVector == Vector2.down)
         {
-            if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.forward);
+            if (CheckMove(inputVector)) transform.rotation = Quaternion.LookRotation(Vector3.back);
         } 
         if (inputVector == Vector2.left)
         {
