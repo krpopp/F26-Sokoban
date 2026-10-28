@@ -44,9 +44,9 @@ public class Recorder : Block
         if (inputCounter >= 4)
         {
             //make these actually record the deltas
-            StartMove(_newParent, recordingOne);
-            StartMove(_newParent, recordingTwo);
-            StartMove(_newParent, recordingThree);
+            //StartMove(_newParent, recordingOne);
+            //StartMove(_newParent, recordingTwo);
+            //StartMove(_newParent, recordingThree);
         }
 
     }
