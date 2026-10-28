@@ -21,8 +21,9 @@ public class Recorder : Block
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         recordingOne = new Vector2(0, 0);
         recordingTwo = new Vector2(0, 0);
         recordingThree = new Vector2(0, 0);
