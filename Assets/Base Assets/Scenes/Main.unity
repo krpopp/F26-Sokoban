@@ -436,7 +436,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.05490196, g: 0.15294118, b: 0.23529412, a: 0}
+  m_BackGroundColor: {r: 0.039215688, g: 0.09019608, b: 0.24705882, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -674,6 +674,7 @@ GameObject:
   - component: {fileID: 1357340070}
   - component: {fileID: 1357340072}
   - component: {fileID: 1357340071}
+  - component: {fileID: 1357340073}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -731,7 +732,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -800,6 +801,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357340069}
   m_CullTransparentMesh: 1
+--- !u!95 &1357340073
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357340069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0eb45ecfcebd44113b6a2b2fc692cca8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1396243464
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57514056496c649d0b3f980acf837e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneControl
+  scaleIn: 0
   sceneAnimation: {fileID: 2092566267}
 --- !u!1 &1437367166
 GameObject:
@@ -1352,6 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57514056496c649d0b3f980acf837e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneControl
+  scaleIn: 0
   sceneAnimation: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

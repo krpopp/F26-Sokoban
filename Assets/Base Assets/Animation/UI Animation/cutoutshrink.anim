@@ -985,7 +985,7 @@ AnimationClip:
   m_Events:
   - time: 0.85
     functionName: ButtonToScene
-    data: DemoLevel
+    data: LevelSelect
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
