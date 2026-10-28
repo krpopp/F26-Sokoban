@@ -8,9 +8,12 @@ public class FTARecorder : Block
     [SerializeField] Vector2 recordingOne; 
     [SerializeField] Vector2 recordingTwo;
     [SerializeField] Vector2 recordingThree;
-
+    
     bool startMoving = false;
     float inputCounter = 0;
+
+    [SerializeField] float recordingActionInterval;
+    [SerializeField] float recordingActionCounter;
     
     
         // It should count total inputs: if<3 then record, if >= 3 then do recorded actions
@@ -25,6 +28,7 @@ public class FTARecorder : Block
         recordingOne = new Vector2(0, 0);
         recordingTwo = new Vector2(0, 0);
         recordingThree = new Vector2(0, 0);
+        
     }
     
     // Update is called once per frame
@@ -36,7 +40,6 @@ public class FTARecorder : Block
             DoRecordedMovement();
         }
     }
-    
     
     protected void MovementRecording(Vector2 inputDirection)
     {
@@ -50,32 +53,29 @@ public class FTARecorder : Block
     void DoRecordedMovement()
     {
         //make these actually record the deltas. MAKE THEM HAPPEN INDEPENDENTLY
-        CheckMove(recordingOne);
-        CheckMove(recordingTwo);
-        CheckMove(recordingThree);
+        recordingActionCounter++;
+        if(recordingActionCounter == recordingActionInterval * Time.deltaTime)
+        {
+            CheckMove(recordingOne);
+        }
+        if(recordingActionCounter == 2 * recordingActionInterval * Time.deltaTime)
+        {
+            CheckMove(recordingTwo);
+        }
+        if(recordingActionCounter == 3 * recordingActionInterval * Time.deltaTime)
+        {
+            CheckMove(recordingThree);
+        }
+        if(recordingActionCounter == 4 * recordingActionInterval * Time.deltaTime)
+        {
+            ResetRecorderBlock();
+        }
+    }
 
+    void ResetRecorderBlock()
+    {
         startMoving = false;
         inputCounter = 0;
-    }
-    
-    public override virtual bool CheckMove(Vector2 _delta)
-    {
-        if (State == MoveStates.idle)
-        {
-            State = MoveStates.attemptingMove;
-            if (canMove && InGrid(gridPos + _delta))
-            {
-                Cell checkCell = gridManager.gridList[gridPos.x + (int)_delta.x][gridPos.y + (int)_delta.y].GetComponent<Cell>();
-                if (!checkCell.CheckContainObj() || CheckHit(checkCell.ContainObj.GetComponent<Block>(), _delta))
-                {
-                    StartMove(checkCell, _delta);
-                    BroadcastMessage("BlockMoved", _delta, SendMessageOptions.DontRequireReceiver);
-                    return true;
-                }
-            }
-            State = MoveStates.idle;
-        }
-        return false;
     }
     
 }
