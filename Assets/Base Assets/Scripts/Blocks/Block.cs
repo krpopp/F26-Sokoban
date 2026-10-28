@@ -166,7 +166,7 @@ public class Block : MonoBehaviour
     /// <summary>
     /// Checks if the provided coordinates are within the grid
     /// </summary>
-    private bool InGrid(Vector2 _newPos)
+    protected virtual bool InGrid(Vector2 _newPos)
     {
         if (_newPos.x >= 0 && _newPos.x < gridManager.gridList.Count &&
             _newPos.y >= 0 && _newPos.y < gridManager.gridList[0].Count) return true;
