@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dda980876ec05462781d37a092403c6f
+guid: 8d7886fdb0cf44abba14367e1360b352
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Blocko
+  - SquareFont Outline
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
