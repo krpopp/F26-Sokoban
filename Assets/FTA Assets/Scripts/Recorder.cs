@@ -4,10 +4,10 @@ public class Recorder : Block
 {
     // Variables that store directions, I'd say up to 3.
     // Turn these into a list
-    Vector2Int[] storedDirections = { Vector2Int.one, Vector2Int.two, Vector2Int.three };
-    Vector2Int recordingOne; 
-    Vector2Int recordingTwo;
-    Vector2Int recordingThree;
+    //Vector2Int[] storedDirections = { Vector2Int.one, Vector2Int.two, Vector2Int.three };
+    Vector2 recordingOne; 
+    Vector2 recordingTwo;
+    Vector2 recordingThree;
 
     float inputCounter = 0;
     
@@ -23,19 +23,31 @@ public class Recorder : Block
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        recordingOne = new Vector2Int(0, 0);
-        recordingTwo = new Vector2Int(0, 0);
-        recordingThree = new Vector2Int(0, 0);
-        
+        recordingOne = new Vector2(0, 0);
+        recordingTwo = new Vector2(0, 0);
+        recordingThree = new Vector2(0, 0);
     }
-
-    protected override void StartMove(Cell _newParent, Vector2 _delta)
-    {
-
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
+        
     }
+
+    void MovementRecording(Vector2 inputDirection)
+    {
+        inputCounter++;
+        if (inputCounter == 1) recordingOne = inputDirection;
+        if (inputCounter == 2) recordingTwo = inputDirection;
+        if (inputCounter == 3) recordingThree = inputDirection;
+        if (inputCounter >= 4)
+        {
+            //make these actually record the deltas
+            StartMove(_newParent, recordingOne);
+            StartMove(_newParent, recordingTwo);
+            StartMove(_newParent, recordingThree);
+        }
+
+    }
+    
 }
