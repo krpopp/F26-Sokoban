@@ -144,7 +144,7 @@ public class Block : MonoBehaviour
     /// <summary>
     /// Determines if a block that we run into can move
     /// </summary>
-    private bool CheckHit(Block _hitObj, Vector2 _delta)
+    protected virtual bool CheckHit(Block _hitObj, Vector2 _delta)
     {
         if (GetComponent<Slidey>() == null && _hitObj.CheckMove(_delta)) return true;
         return false;
