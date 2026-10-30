@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class Explosion : MonoBehaviour // this is just vfx
 {
     public Light light;
     private void Start()
     {
-        CamShake.amplitude += 5f;
+        CamShake.amplitude += 2.5f;
     }
     private void Update()
     {
