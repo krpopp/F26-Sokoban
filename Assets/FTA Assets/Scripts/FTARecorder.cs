@@ -9,8 +9,10 @@ public class FTARecorder : Block
     [SerializeField] Vector2 recordingTwo;
     [SerializeField] Vector2 recordingThree;
     
-    bool startMoving = false;
+    bool IsRecording = true;
     float inputCounter = 0;
+
+    //[SerializeField] Collider myCollider;
 
     [SerializeField] float recordingActionInterval;
     [SerializeField] float recordingActionCounter;
@@ -35,7 +37,7 @@ public class FTARecorder : Block
     void Update()
     {
         
-        if (startMoving)
+        if (!IsRecording)
         {
             DoRecordedMovement();
         }
@@ -45,9 +47,15 @@ public class FTARecorder : Block
     {
         inputCounter++;
         if (inputCounter == 1) recordingOne = inputDirection;
-        if (inputCounter == 2) recordingTwo = inputDirection;
-        if (inputCounter == 3) recordingThree = inputDirection;
-        if (inputCounter >= 4) startMoving = true;
+        else if (inputCounter == 2) recordingTwo = inputDirection;
+        else if (inputCounter == 3)
+        {
+            recordingThree = inputDirection;
+            IsRecording = false;
+            canMove = false;
+        }
+        Debug.Log(inputDirection);
+        Debug.Log(inputCounter); 
     }
 
     void DoRecordedMovement()
@@ -72,10 +80,40 @@ public class FTARecorder : Block
         }
     }
 
+    /*
+    protected override void StartMove(Cell _newParent, Vector2 _delta)
+    {
+        Debug.Log("Called Start Move!!!");
+        if (IsRecording)
+        {
+            MovementRecording(_delta);
+            return;
+        }
+        
+        base.StartMove(_newParent, _delta);
+    }
+    */
+
+    public override bool CheckMove(Vector2 _delta)
+    {
+        
+        Debug.Log("Called CheckMove!!!");
+        if (IsRecording)
+        {
+            MovementRecording(_delta);
+            return(false);
+        }
+        canMove = true;
+        base.CheckMove(_delta);
+        canMove = false;
+        return (true);
+    }
+    
     void ResetRecorderBlock()
     {
-        startMoving = false;
+        IsRecording = true;
         inputCounter = 0;
+        canMove = true;
     }
     
 }
