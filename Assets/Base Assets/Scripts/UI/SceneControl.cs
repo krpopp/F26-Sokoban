@@ -5,7 +5,7 @@ public class SceneControl : MonoBehaviour
 {
 
     [SerializeField] private bool scaleIn;
-    
+    [SerializeField] private string nextScene;
     [SerializeField] private Animator sceneAnimation;
 
     private bool sceneReady = true;
@@ -22,15 +22,17 @@ public class SceneControl : MonoBehaviour
     public void CanInteract()
     {
         sceneReady = true;
+        scaleIn = false;
     }
     
     public void AnimationTransition(string animName)
     {
-        sceneAnimation.SetBool(animName, true);
+        sceneAnimation.gameObject.GetComponent<SceneControl>().nextScene = nextScene;
+        if(!sceneAnimation.GetBool(animName)) sceneAnimation.SetBool(animName, true);
     }
     
-    public void ButtonToScene(string toLoad)
+    public void ButtonToScene()
     {
-        if(sceneReady) SceneManager.LoadScene(toLoad);
+        if(sceneReady) SceneManager.LoadScene(nextScene);
     }
 }
