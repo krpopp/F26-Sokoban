@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3600707358630190731}
-  m_Mesh: {fileID: 7485386977739335190, guid: 1b9a0ef2f88644e699b30ffbd51992e0, type: 3}
+  m_Mesh: {fileID: -6018108322033485473, guid: ac4adae4dbe8042198792d649b57b7a9, type: 3}
 --- !u!23 &2388927099263282890
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -155,4 +155,3 @@ MonoBehaviour:
   canMove: 1
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
