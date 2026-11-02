@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-
     private GameObject containObj = null;
     public GameObject ContainObj
     {
