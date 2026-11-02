@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 6592279943060388147}
   - component: {fileID: 4400037649519715519}
   m_Layer: 0
-  m_Name: Player
+  m_Name: CSPPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
