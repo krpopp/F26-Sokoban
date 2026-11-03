@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public class Piece
+public class Piece : MonoBehaviour
 {
     public bool color;
     public PieceType pieceType;
-
+    
     public enum PieceType
     {
         QUEEN, KING, PAWN, BISHOP, ROOK, KNIGHT
@@ -34,6 +34,7 @@ public class Piece
                 return RookAttacks(from, to);
                 break;
             default:
+                return false;
                 break;
         }
     }
@@ -72,14 +73,7 @@ public class Piece
 
     public bool BishopAttacks(Vector2 from, Vector2 to)
     {
-        if (from.x / to.x == from.y / to.y || from.x / to.x == -from.y / to.y)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return Mathf.Abs(from.x - to.x) == Mathf.Abs(from.y - to.y);
     }
 
     public bool PawnAttacks(Vector2 from, Vector2 to)
@@ -110,9 +104,9 @@ public class Piece
 
     public bool KingAttacks(Vector2 from, Vector2 to)
     {
-        if (from.y + 1 == to.y || from.y == to.y || from.y - 1 = to.y)
+        if (from.y + 1 == to.y || from.y == to.y || from.y - 1 == to.y)
         {
-            if(from.x + 1 == to.x || from.x == to.x || from.x - 1 = to.x))
+            if(from.x + 1 == to.x || from.x == to.x || from.x - 1 == to.x)
             {
                 return true;
             }
