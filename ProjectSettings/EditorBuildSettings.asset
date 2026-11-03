@@ -4,7 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MR/Scenes/MRLvl0.unity
+    guid: 30fd9ab0356f5b0489cc5f24a719af84
+  - enabled: 1
+    path: Assets/MR/Scenes/MRLvl1.unity
+    guid: 69e7a9010b9d2a846ac116d5adb82b40
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_UseUCBPForAssetBundles: 0
