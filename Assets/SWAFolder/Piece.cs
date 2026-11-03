@@ -73,6 +73,7 @@ public class Piece : MonoBehaviour
 
     public bool BishopAttacks(Vector2 from, Vector2 to)
     {
+        if (from == to) return false;
         return Mathf.Abs(from.x - to.x) == Mathf.Abs(from.y - to.y);
     }
 

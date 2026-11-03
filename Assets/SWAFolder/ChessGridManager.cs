@@ -3,34 +3,51 @@ using UnityEngine;
 
 public class ChessGridManager :GridManager
 {
-    public List<GameObject> GetPieces()
+    public List<GameObject> pieces;
+    public void Start()
     {
-        List<GameObject> pieces = new List<GameObject>();
-        foreach (List<GameObject> list in gridList)
-        {
-            foreach (GameObject piece in list)
-            {
-                if (piece.TryGetComponent<Piece>(out Piece _piece))
-                {
-                    pieces.Add(piece);
-                }
-            }
-        }
-        return pieces;
+        GameObject.FindGameObjectsWithTag("block", pieces);
     }
     
     public bool IsSquareAttacked(Vector2 square, bool color)
     {
-        Debug.Log("IsSquareAttacked" + square);
-        UpdateGrid();
-        foreach (GameObject piece in GetPieces())
+        foreach (GameObject piece in pieces)
         {
-            Piece piecePiece = piece.GetComponent<Piece>(); 
-            if (piecePiece.color == color) continue;
-            if (piecePiece.IsAttackingSquare(WorldToBoardCoords(piece.transform.position), square))
-            {
+            Piece p = piece.GetComponent<Piece>();
+            if (p == null || p.color == color) continue;
+            if (!p.IsAttackingSquare(WorldToBoardCoords(piece.transform.position), square)) return false;
+            if (IsPathBlocked(WorldToBoardCoords(piece.transform.position),square)) return false;
+            return true;
+        }
+        return false;
+    }
+    
+    private bool IsPathBlocked(Vector2 from, Vector2 to)
+    {
+        float deltaX = to.x - from.x;
+        float deltaY = to.y - from.y;
+        
+        bool straight = deltaX == 0 || deltaY == 0;
+        bool diagonal = Mathf.Abs(deltaX) == Mathf.Abs(deltaY);
+        if (!straight && !diagonal) return false;
+
+        Vector2 step = new Vector2(System.Math.Sign(deltaX), System.Math.Sign(deltaY));
+
+        
+        for (Vector2 i = from + step; i != to; i += step)
+        {
+            if (IsOccupied(i)) return true;
+        }
+        return false;
+    }
+    
+    private bool IsOccupied(Vector2 boardPos)
+    {
+        foreach (GameObject piece in pieces)
+        {
+            if (piece == null) continue;
+            if (Vector2Int.RoundToInt(WorldToBoardCoords(piece.transform.position)) == boardPos)
                 return true;
-            }
         }
         return false;
     }

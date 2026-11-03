@@ -384,6 +384,7 @@ MonoBehaviour:
   debugMode: 0
   canvas: {fileID: 1335153000}
   label: {fileID: 154735510835638128, guid: 8b9a60597b8ca4ae686c3b792af07ae1, type: 3}
+  pieces: []
 --- !u!4 &322271560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5575396944787829111, guid: a492f29cff9f542c49e288037998164d, type: 3}
@@ -6903,7 +6904,7 @@ GameObject:
   - component: {fileID: 9149232718749534669}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6943,7 +6944,7 @@ Transform:
   m_GameObject: {fileID: 4655455299999978312}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 1}
+  m_LocalPosition: {x: -2, y: 0, z: -1}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
