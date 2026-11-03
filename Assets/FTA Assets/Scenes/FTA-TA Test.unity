@@ -1323,14 +1323,16 @@ MonoBehaviour:
   speed: 5
   lerpSnapDist: 0.1
   targetPos: {x: 0, y: 0, z: 0}
-  canMove: 1
+  canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
   recordingOne: {x: 0, y: 0}
   recordingTwo: {x: 0, y: 0}
   recordingThree: {x: 0, y: 0}
-  recordingActionInterval: 180
-  recordingActionCounter: 0
+  recordedActionInterval: 60
+  recordedWaitTimeCounter: 0
+  timeSinceRecording: 0
+  recordingInputCooldown: 60
 --- !u!114 &1323482035
 MonoBehaviour:
   m_ObjectHideFlags: 0

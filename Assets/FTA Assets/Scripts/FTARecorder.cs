@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FTARecorder : Block
 {
@@ -14,8 +15,10 @@ public class FTARecorder : Block
 
     //[SerializeField] Collider myCollider;
 
-    [SerializeField] float recordingActionInterval;
-    [SerializeField] float recordingActionCounter;
+    [SerializeField] float recordedActionInterval;
+    [SerializeField] float recordedWaitTimeCounter;
+    [SerializeField] float timeSinceRecording;
+    [SerializeField] float recordingInputCooldown;
     
     
         // It should count total inputs: if<3 then record, if >= 3 then do recorded actions
@@ -36,7 +39,7 @@ public class FTARecorder : Block
     // Update is called once per frame
     void Update()
     {
-        
+        timeSinceRecording++;
         if (!IsRecording)
         {
             DoRecordedMovement();
@@ -48,12 +51,13 @@ public class FTARecorder : Block
         inputCounter++;
         if (inputCounter == 1) recordingOne = inputDirection;
         else if (inputCounter == 2) recordingTwo = inputDirection;
-        else if (inputCounter == 3)
+        else if (inputCounter == 3) recordingThree = inputDirection;
+        else if (inputCounter >= 4)
         {
-            recordingThree = inputDirection;
             IsRecording = false;
             canMove = false;
         }
+
         Debug.Log(inputDirection);
         Debug.Log(inputCounter); 
     }
@@ -61,20 +65,20 @@ public class FTARecorder : Block
     void DoRecordedMovement()
     {
         //make these actually record the deltas. MAKE THEM HAPPEN INDEPENDENTLY
-        recordingActionCounter++;
-        if(recordingActionCounter == recordingActionInterval * Time.deltaTime)
+        recordedWaitTimeCounter++;
+        if(recordedWaitTimeCounter == recordedActionInterval * Time.deltaTime)
         {
             CheckMove(recordingOne);
         }
-        if(recordingActionCounter == 2 * recordingActionInterval * Time.deltaTime)
+        if(recordedWaitTimeCounter == 2 * recordedActionInterval * Time.deltaTime)
         {
             CheckMove(recordingTwo);
         }
-        if(recordingActionCounter == 3 * recordingActionInterval * Time.deltaTime)
+        if(recordedWaitTimeCounter == 3 * recordedActionInterval * Time.deltaTime)
         {
             CheckMove(recordingThree);
         }
-        if(recordingActionCounter == 4 * recordingActionInterval * Time.deltaTime)
+        if(recordedWaitTimeCounter == 4 * recordedActionInterval * Time.deltaTime)
         {
             ResetRecorderBlock();
         }
@@ -100,7 +104,11 @@ public class FTARecorder : Block
         Debug.Log("Called CheckMove!!!");
         if (IsRecording)
         {
-            MovementRecording(_delta);
+            if (timeSinceRecording >= recordingInputCooldown)
+            {
+                MovementRecording(_delta);
+                timeSinceRecording = 0;
+            }
             return(false);
         }
         canMove = true;
