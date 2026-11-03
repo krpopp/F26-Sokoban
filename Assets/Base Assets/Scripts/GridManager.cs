@@ -41,6 +41,8 @@ public class GridManager : MonoBehaviour
     {
         MakeGrid();
     }
+    
+    
 
     /// <summary>
     /// Makes grid data structure based on level placement in the scene
