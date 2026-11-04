@@ -11,12 +11,18 @@ public class WinManager : MonoBehaviour
     [SerializeField] private GameObject nextLevelButton;
     [SerializeField] private GameObject nextLevelScreen;
 
+    [SerializeField] private AudioSource levelClearSound;
+    [SerializeField] private AudioSource goalSound;
+
     private bool solved;
+    private bool[] isCovered;
 
     private void Start()
     {
         nextLevelButton.SetActive(false);
         nextLevelScreen.SetActive(false);
+        
+        isCovered = new bool[targetCells.Length];
     }
 
     private void Update()
@@ -31,35 +37,56 @@ public class WinManager : MonoBehaviour
             solved = true;
             Debug.Log("level cleared!!!");
             Invoke("ShowButton", 0.5f);
+            PlaySound(levelClearSound);
+            
         }
     }
 
     private bool AllCellsCovered()
     {
-        foreach (Vector2Int pos in targetCells)
+        bool allCovered = true;
+
+        for (int i = 0; i < targetCells.Length; i++)
         {
+            Vector2Int pos = targetCells[i];
             Cell cell = gridManager.gridList[pos.x][pos.y].GetComponent<Cell>();
-
-            if (!cell.CheckContainObj())
-            {
-                return false;
-            }
             
-            Block block = cell.ContainObj.GetComponent<Block>();
+            bool covered = false;
 
-            if (block.State != Block.MoveStates.idle)
+            if (cell.CheckContainObj())
             {
-                return false;
+                Block block = cell.ContainObj.GetComponent<Block>();
+                covered = block.State == Block.MoveStates.idle && block.GetComponent<Player>() == null;
+            }
+
+            if (covered && !isCovered[i])
+            {
+                PlaySound(goalSound);
+            }
+
+            isCovered[i] = covered;
+
+            if (!covered)
+            {
+                allCovered = false;
             }
         }
 
-        return true;
+        return allCovered;
     }
 
     private void ShowButton()
     {
         nextLevelButton.SetActive(true);
         nextLevelScreen.SetActive(true);
+    }
+
+    private void PlaySound(AudioSource audioSource)
+    {
+        if (audioSource != null && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 
     public void LoadNextLevel()

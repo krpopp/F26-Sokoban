@@ -12,6 +12,8 @@ public class TeleportBlock : Block
     
     private bool canTeleport = true;
 
+    [SerializeField] private AudioSource audioSource;
+
     protected override void FinishMove()
     {
         base.FinishMove();
@@ -48,6 +50,11 @@ public class TeleportBlock : Block
         }
         
         canTeleport = false;
+
+        if (audioSource != null && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
         
         playEffect(startEffect, transform.position);
 
@@ -59,11 +66,13 @@ public class TeleportBlock : Block
         targetPos = transform.position;
         gridManager.UpdateGrid();
         
+        
         playEffect(endEffect, transform.position);
     }
 
     private void playEffect(ParticleSystem effect, Vector3 pos)
     {
+        
         if (effect == null)
         {
             return;
