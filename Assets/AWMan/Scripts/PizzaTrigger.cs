@@ -33,4 +33,9 @@ public class PizzaTrigger : MonoBehaviour
     {
         
     }
+
+    public void ResetTrigger()
+    {
+        activated = false;
+    }
 }

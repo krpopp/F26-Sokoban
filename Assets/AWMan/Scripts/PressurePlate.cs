@@ -16,42 +16,81 @@ public class PressurePlate : MonoBehaviour
     //tracks if pressure plate already been activated
     private bool activated = false;
     
+    //color settings
+    public Renderer plateRenderer;
+
+    public Color originalColor;
+
+    public AudioSource audioSource;
+
+    public AudioClip pressSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
     {
+        if (plateRenderer != null)
+        {
+            originalColor = plateRenderer.material.color;
+        }
     }
-
+    
    //called whenever another collider enters pressure plate trigger
-    private void OnTriggerEnter(Collider other)
-    {
-        if (activated) return;
-        //checks if obj entering is player or block component
-        Player player = other.GetComponentInParent<Player>();
-        Block block = other.GetComponentInParent<Block>();
-        
-        if (block == null) return;
+   private void OnTriggerEnter(Collider other)
+   {
+       if (activated) return;
+       //checks if obj entering is player or block component
+       Block block = other.GetComponentInParent<Block>();
 
-        if (activationType == ActivationType.Player)
-        {
-            if (player == null) return;
-        }
+       if (block == null) return;
 
-        if (activationType == ActivationType.Pizza)
-        {
-            //prevents player from activating pizza only plate
-            if (player != null) return;
-            //only allow pizza with name to activate
-            if (block.gameObject.name != requiredPizzaName) return;
+       if (activationType == ActivationType.Player)
+       {
+           if (other.CompareTag("Player") || block.CompareTag("Player"))
+           {
+               ActivatePlate();
+           }
+       }
+       else if (activationType == ActivationType.Pizza)
+       {
+               if (block.gameObject.name.Contains(requiredPizzaName))
+               {
+                   ActivatePlate();
+               }
+       }
+   }
+
+   private void ActivatePlate()
+   {
+            activated = true;
+            if (plateRenderer != null)
+            {
+                plateRenderer.material.color = Color.green;
+            }
+
+            if (audioSource != null && pressSound != null)
+            {
+                audioSource.PlayOneShot(pressSound);
+            }
+
+            if (doorController != null)
+            {
+                //tells doorcontroller to count the activation
+                doorController.ActivateDoor();
+            }
         }
-        
-        activated = true;
-        //tells doorcontroller to count the activation
-        doorController.ActivateDoor();
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ResetPlate()
+    {
+        activated = false;
+        if(plateRenderer != null)
+        {
+            plateRenderer.material.color = originalColor;
+        }
     }
 }

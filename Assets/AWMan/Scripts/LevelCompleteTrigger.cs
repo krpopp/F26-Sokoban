@@ -11,6 +11,8 @@ public class LevelProgressionManager : MonoBehaviour
    private bool transitioning = false;
    private float hideTime;
 
+   public AudioSource celebrationAudio;
+   public AudioClip celebrationSound;
    private void Start()
    {
       foreach (GameObject image in completionImages)
@@ -32,6 +34,11 @@ public class LevelProgressionManager : MonoBehaviour
       completionImages[levelNumber - 1].SetActive(true);
       confetti.Play();
       hideTime = Time.time + displayDuration;
+
+      if (celebrationAudio != null && celebrationSound != null)
+      {
+         celebrationAudio.PlayOneShot(celebrationSound);
+      }
    }
 
    private void Update()

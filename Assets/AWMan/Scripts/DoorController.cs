@@ -51,4 +51,12 @@ public class DoorController : MonoBehaviour
             doorPivot.localRotation = Quaternion.Slerp(doorPivot.localRotation, openRotation, rotationSpeed * Time.deltaTime);
         }
     }
+    
+    //for reset method, reset door to orgininal closed roation + lets pressure plate activate again
+    public void ResetDoor()
+    {
+        currentActivations = 0;
+        doorOpened = false;
+        doorPivot.localRotation = closedRotation;
+    }
 }
