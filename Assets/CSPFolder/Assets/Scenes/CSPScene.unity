@@ -3512,6 +3512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2388927099263282890, guid: a8a5b04e04fe26d498b203e6d147a0ba, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 068358c12f4483741b9fcc2efbc40c57, type: 2}
     - target: {fileID: 3600707358630190731, guid: a8a5b04e04fe26d498b203e6d147a0ba, type: 3}
       propertyPath: m_Name
       value: CSPSnowmanBase
@@ -3878,6 +3882,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2388927099263282890, guid: 6df9050b982de3e49a819424641f65be, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 068358c12f4483741b9fcc2efbc40c57, type: 2}
     - target: {fileID: 3600707358630190731, guid: 6df9050b982de3e49a819424641f65be, type: 3}
       propertyPath: m_Name
       value: CSPBall
