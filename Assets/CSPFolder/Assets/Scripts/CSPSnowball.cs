@@ -5,6 +5,9 @@ public class CSPSnowball : Block
 {
     [SerializeField] private Vector3 stackOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] private float snapDist = 0.01f;
+    private bool hasFirstBall = false;
+    private bool switchToEnd = false;
+    public GameObject victoryPanel;
 
     private CSPSnowmanBase stackTarget;
     public bool isStacked { get; private set; }
@@ -22,6 +25,7 @@ public class CSPSnowball : Block
         if (_hitObj is CSPSnowmanBase snowmanBase)
         {
             stackTarget = snowmanBase;
+            if(_hitObj.GetComponentInChildren<CSPSnowball>()) hasFirstBall = true;
             return true;
         }
         return base.CheckHit(_hitObj, _delta);
@@ -52,6 +56,11 @@ public class CSPSnowball : Block
         canMove = false;
 
         targetPos = snowmanBase.transform.position + stackOffset;
+        if(hasFirstBall)
+        {
+            targetPos = snowmanBase.transform.position + 2 * stackOffset;
+            switchToEnd = true;
+        }
         State = MoveStates.moving;
         StartCoroutine(StackLoop());
     }
@@ -64,6 +73,12 @@ public class CSPSnowball : Block
             yield return null;
         }
         FinishMove();
+        if (switchToEnd)
+        {
+            Time.timeScale = 0;
+            victoryPanel.SetActive(true);
+        }
+        
     }
 
     
