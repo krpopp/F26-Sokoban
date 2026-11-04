@@ -138,6 +138,16 @@ public class FTARecorder : Block
                 {
                     StartMove(checkCell, _delta);
                 }
+                
+
+                
+                /*
+                {
+                    Cell finalCell = gridManager.gridList[gridPos.x + (int)_delta.x][gridPos.y + (int)_delta.y]
+                        .GetComponent<Cell>();
+                    if (!finalCell)
+                }
+                */
             }
             State = MoveStates.idle;
         }
@@ -148,6 +158,7 @@ public class FTARecorder : Block
         IsRecording = true;
         inputCounter = 0;
         recordingCounter = -1;
+        
     }
     
 }
