@@ -44,8 +44,6 @@ public class GridManager : MonoBehaviour
     {
         MakeGrid();
     }
-    
-    
 
     private void Start()
     {
