@@ -1,5 +1,8 @@
+using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
 
 public class FTARecorder : Block
 {
@@ -21,6 +24,7 @@ public class FTARecorder : Block
     [SerializeField] float recordingInputCooldown;
 
     int recordingCounter = 0;
+    int timeSinceFinalPosition = 0;
     
     
         // It should count total inputs: if<3 then record, if >= 3 then do recorded actions
@@ -31,6 +35,15 @@ public class FTARecorder : Block
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
+        if (transform.position.x == -5 & transform.position.z == -1)
+        {
+            timeSinceFinalPosition++;
+            if(timeSinceFinalPosition >= 120)
+            {
+                Debug.Log("YOU WON!!!!");
+                SceneManager.LoadScene("FTA FIRST");
+            }
+        }
         canMove = false;
         base.Start();
         recordingOne = new Vector2(0, 0);
@@ -45,7 +58,11 @@ public class FTARecorder : Block
         timeSinceRecording++;
         if (!IsRecording)
         {
-            DoRecordedMovement();
+            if(timeSinceRecording >= recordedActionInterval*1.5)
+            {
+                DoRecordedMovement();
+                timeSinceRecording = 0;
+            }
         }
     }
     
