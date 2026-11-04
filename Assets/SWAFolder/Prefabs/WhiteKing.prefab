@@ -604,7 +604,8 @@ MonoBehaviour:
   moveChange: {x: 0, y: 0}
   myAnim: {fileID: 8710024211614643570}
   audioSource: {fileID: 8716289552548120335}
-  error: {fileID: 8300000, guid: 5d91ea29feccd401d8c9e719f42290ff, type: 3}
+  error: {fileID: 8300000, guid: 890b195c525744be58a4af95242ecf90, type: 3}
+  moveSound: {fileID: 8300000, guid: a442bd6b5468c4b01ab1a56cc1f0dc9a, type: 3}
 --- !u!95 &8710024211614643570
 Animator:
   serializedVersion: 7
