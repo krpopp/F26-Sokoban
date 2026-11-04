@@ -45,7 +45,7 @@ public class Golf : Slidey
         }
     }
     
-    private void Slide(Vector2 _delta)
+    protected override void Slide(Vector2 _delta)
     {
         CheckMove(_delta);
     }
