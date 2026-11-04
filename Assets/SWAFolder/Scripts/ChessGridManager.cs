@@ -25,6 +25,11 @@ public class ChessGridManager :GridManager
         }
         return false;
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R)) Restart();
+    }
     
     private bool IsPathBlocked(Vector2 from, Vector2 to)
     {
