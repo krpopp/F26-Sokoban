@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChessGridManager :GridManager
 {
+    public String nextSceneName;
     public List<GameObject> pieces;
+    public GameObject winPrompt;
     public void Start()
     {
         GameObject.FindGameObjectsWithTag("block", pieces);
@@ -58,5 +62,15 @@ public class ChessGridManager :GridManager
         Vector2 boardCoords = new Vector2(_worldPos.x,  _worldPos.z);
         boardCoords = new Vector2(5f,5f)+ boardCoords/cellSize;
         return boardCoords;
+    }
+
+    public void Win()
+    {
+        winPrompt.SetActive(true);
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(nextSceneName);
     }
 }
