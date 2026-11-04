@@ -19,8 +19,8 @@ public class ChessGridManager :GridManager
         {
             Piece p = piece.GetComponent<Piece>();
             if (p == null || p.color == color) continue;
-            if (!p.IsAttackingSquare(WorldToBoardCoords(piece.transform.position), square)) return false;
-            if (IsPathBlocked(WorldToBoardCoords(piece.transform.position),square)) return false;
+            if (!p.IsAttackingSquare(WorldToBoardCoords(piece.transform.position), square)) continue;
+            if (IsPathBlocked(WorldToBoardCoords(piece.transform.position),square)) continue;
             return true;
         }
         return false;
@@ -28,16 +28,10 @@ public class ChessGridManager :GridManager
     
     private bool IsPathBlocked(Vector2 from, Vector2 to)
     {
-        float deltaX = to.x - from.x;
-        float deltaY = to.y - from.y;
-        
-        bool straight = deltaX == 0 || deltaY == 0;
-        bool diagonal = Mathf.Abs(deltaX) == Mathf.Abs(deltaY);
-        if (!straight && !diagonal) return false;
+        Vector2 delta = to - from;
+        if (!(delta.x == 0 || delta.y == 0) && !(Mathf.Abs(delta.x) == Mathf.Abs(delta.y))) return false;
 
-        Vector2 step = new Vector2(System.Math.Sign(deltaX), System.Math.Sign(deltaY));
-
-        
+        Vector2 step = new Vector2(System.Math.Sign(delta.x), System.Math.Sign(delta.y));
         for (Vector2 i = from + step; i != to; i += step)
         {
             if (IsOccupied(i)) return true;
@@ -72,5 +66,11 @@ public class ChessGridManager :GridManager
     public void NextScene()
     {
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void Restart()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 }
