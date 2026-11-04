@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AYFolder/AYMain.unity
+    path: Assets/AYFolder/Instructions.unity
+    guid: e26fab53a872582429a0e25c8a7463ac
+  - enabled: 1
+    path: Assets/AYFolder/LevelOne.unity
+    guid: 0f1ba4ac62c7a074c8ec5cccd93eab84
+  - enabled: 1
+    path: Assets/AYFolder/LevelTwo.unity
     guid: c31651317538b7e46bb4dd1e149d1ed9
   - enabled: 1
-    path: Assets/AYFolder/Level2.unity
-    guid: fd607de59d58eed47bcf8bd7fcc52ff2
-  - enabled: 1
-    path: Assets/AYFolder/Level3.unity
-    guid: 282085f96dafeb342ba93b73e94954e0
+    path: Assets/AYFolder/LevelThree.unity
+    guid: 6d7109f6b24a5d4408904b736013a965
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

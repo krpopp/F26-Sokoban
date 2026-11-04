@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using Unity.VisualScripting.FullSerializer;
+
 
 public class WinManager : MonoBehaviour
 {
