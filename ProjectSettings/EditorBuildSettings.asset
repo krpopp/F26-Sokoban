@@ -4,7 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SWAFolder/Scenes/swa_level_1.unity
+    guid: 85dd9a231560e4522a8ae62e1f4d70e1
+  - enabled: 0
+    path: Assets/SWAFolder/SWAScene.unity
+    guid: 8a51b7e0b5f8a4c03bd27e24add960fd
+  - enabled: 1
+    path: Assets/SWAFolder/Scenes/swa_level_2.unity
+    guid: 71b25f369123f43abad940cf51c84c38
+  - enabled: 1
+    path: Assets/SWAFolder/Scenes/swa_level_3.unity
+    guid: 7f2079e465b6e4047abd2c2cc9ed2985
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

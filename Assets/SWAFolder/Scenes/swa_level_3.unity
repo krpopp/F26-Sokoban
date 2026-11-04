@@ -463,7 +463,7 @@ MonoBehaviour:
   debugMode: 0
   canvas: {fileID: 1335153000}
   label: {fileID: 154735510835638128, guid: 8b9a60597b8ca4ae686c3b792af07ae1, type: 3}
-  nextSceneName: SWAScene
+  nextSceneName: 
   pieces: []
   winPrompt: {fileID: 497271083}
 --- !u!4 &322271560 stripped
