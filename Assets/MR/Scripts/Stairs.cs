@@ -20,6 +20,13 @@ public class Stairs : Block
 
     protected virtual void NextLvl()
     {
+        if (nextScene == "") 
+        {
+            Debug.Break();
+            Debug.Log("END");
+            return;
+        }
+
         SceneManager.LoadScene(nextScene);
         startedNextLvlSequence = true;
     }

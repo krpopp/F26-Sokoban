@@ -157,3 +157,4 @@ MonoBehaviour:
   moveChange: {x: 0, y: 0}
   explosion: {fileID: 7906423022368251880, guid: f28792e78cbd4504a8b10fa63ad20727, type: 3}
   destroyRange: 1
+  pushSnd: {fileID: 8300000, guid: 3bfc234d6e42b4a4ebed2f7b89f1b360, type: 3}

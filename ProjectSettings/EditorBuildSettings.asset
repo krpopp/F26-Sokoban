@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MR/Scenes/MRLvl1.unity
     guid: 69e7a9010b9d2a846ac116d5adb82b40
+  - enabled: 1
+    path: Assets/MR/Scenes/MRLvl2.unity
+    guid: 2d53de12ba2367f4ea0113d7713d295e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

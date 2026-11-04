@@ -5,6 +5,7 @@ public class ExplosiveCrate : Slidey
     [Header("---Explosive---")]
     public GameObject explosion;
     public int destroyRange = 1;
+    public AudioClip pushSnd;
 
     protected override void Slide(Vector2 _delta)
     {
@@ -15,6 +16,11 @@ public class ExplosiveCrate : Slidey
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+    }
+    protected override void StartMove(Cell _newParent, Vector2 _delta)
+    {
+        base.StartMove(_newParent, _delta);
+        AudioSource.PlayClipAtPoint(pushSnd, transform.position);
     }
 
     private void DestroyNeighbours() 
@@ -29,6 +35,9 @@ public class ExplosiveCrate : Slidey
                     if (cell.ContainObj != null && cell.ContainObj.GetComponent<Block>() != null && cell.ContainObj != gameObject && !cell.ContainObj.name.Contains("Wall"))
                     {
                         Destroy(cell.ContainObj);
+
+                        if (cell.ContainObj.CompareTag("Player"))
+                            GameManager.GameOver();
                     }
                 }
             }
