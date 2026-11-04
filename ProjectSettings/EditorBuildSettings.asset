@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/CSPFolder/Assets/Scenes/CSPScene.unity
-    guid: 03140ff4c0fc2a84bbfefd8206576c53
+    path: Assets/Base Assets/Scenes/Main.unity
+    guid: 25fe116ad11304018a67752ca8caa2bd
   - enabled: 1
-    path: Assets/CSPFolder/Assets/Scenes/CSPScene2.unity
-    guid: e52a057acd73f5c43b03e495698da96f
+    path: Assets/Base Assets/Scenes/DemoLevel.unity
+    guid: 27ad0a78fcd8d43378aeefd9df32df57
   - enabled: 1
-    path: Assets/CSPFolder/Assets/Scenes/CSPScene3.unity
-    guid: d20c6bb6a0e000c4c827327c3a97ce54
+    path: Assets/Base Assets/Scenes/LevelSelect.unity
+    guid: 4bc6c51175d574811835164c0df3a436
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
