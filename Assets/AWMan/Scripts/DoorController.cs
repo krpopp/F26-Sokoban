@@ -21,6 +21,9 @@ public class DoorController : MonoBehaviour
     private bool doorOpened = false;
 
     public bool IsOpen => doorOpened;
+
+    public AudioSource audioSource;
+    public AudioClip doorOpenClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +42,11 @@ public class DoorController : MonoBehaviour
         if (currentActivations >= requiredActivations)
         {
             doorOpened = true;
+
+            if (audioSource != null && doorOpenClip != null)
+            {
+                audioSource.PlayOneShot(doorOpenClip);
+            }
         }
     }
 
