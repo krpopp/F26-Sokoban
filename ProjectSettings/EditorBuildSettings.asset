@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/1103_Loren.unity
+    guid: e03863cc608374f92b2169838f7a603d
+  - enabled: 1
+    path: Assets/Level2_Loren.unity
+    guid: 985c876fa290d40d8a65720061fcb41e
+  - enabled: 1
+    path: Assets/Level3_Loren.unity
+    guid: 32930af78998a414ba64716df911a669
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

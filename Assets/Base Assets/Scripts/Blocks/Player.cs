@@ -53,11 +53,5 @@ public class Player : Block
         myAnim.SetBool("isMoving", true);
         base.StartMove(newParent, _delta);
     }
-
-    protected override void FinishMove()
-    {
-        myAnim.SetBool("isMoving", false);
-        base.FinishMove();
-    }
-
+    
 }
