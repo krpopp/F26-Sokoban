@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class DestroyBlock : MonoBehaviour
+public class DestroyBlock : Slidey
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    protected override bool CheckHit(Block _hitObj, Vector2 _delta)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        bool hasHit = base.CheckHit(_hitObj, _delta);
+        Destroy(_hitObj.gameObject);
+        return hasHit;
     }
 }
