@@ -10,7 +10,7 @@ public class Slidey : Block
         Slide(moveChange);
     }
 
-    private void Slide(Vector2 _delta)
+    protected virtual void Slide(Vector2 _delta)
     {
         CheckMove(_delta);
     }
