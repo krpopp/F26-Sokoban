@@ -13,6 +13,7 @@ public class Slidey : Block
     protected virtual void Slide(Vector2 _delta)
     {
         CheckMove(_delta);
+        Debug.Log("X: " + transform.position.x + ", Y: " + transform.position.y);
     }
 
 }
