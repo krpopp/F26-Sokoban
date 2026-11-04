@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 6761516320079873821}
   - component: {fileID: 6592279943060388147}
   - component: {fileID: 4400037649519715519}
+  - component: {fileID: 1995778614622663349}
   m_Layer: 0
   m_Name: CSPPlayer
   m_TagString: Player
@@ -511,6 +512,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1995778614622663349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301981105375451235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a463a306f1e7a43bdc014facb5413b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CSPPlayerSound
+  stepSound: {fileID: 0}
 --- !u!1 &8546947721377108135
 GameObject:
   m_ObjectHideFlags: 0

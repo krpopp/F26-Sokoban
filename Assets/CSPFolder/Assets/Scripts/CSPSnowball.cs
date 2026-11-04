@@ -8,6 +8,10 @@ public class CSPSnowball : Block
     private bool hasFirstBall = false;
     private bool switchToEnd = false;
     public GameObject victoryPanel;
+    public AudioSource victorySound;
+    public AudioSource backgroundMusic;
+    public AudioSource backgroundSound;
+    public AudioSource rollSound;
 
     private CSPSnowmanBase stackTarget;
     public bool isStacked { get; private set; }
@@ -36,6 +40,8 @@ public class CSPSnowball : Block
         CSPSnowmanBase snowmanBase = stackTarget;
         stackTarget = null;
 
+        rollSound.Play();
+
         if (snowmanBase == null)
         {
             base.StartMove(_newParent, _delta);
@@ -60,7 +66,7 @@ public class CSPSnowball : Block
         {
             targetPos = snowmanBase.transform.position + 2 * stackOffset;
             switchToEnd = true;
-        }
+        }else victorySound.Play();
         State = MoveStates.moving;
         StartCoroutine(StackLoop());
     }
@@ -77,6 +83,9 @@ public class CSPSnowball : Block
         {
             Time.timeScale = 0;
             victoryPanel.SetActive(true);
+            backgroundMusic.Stop();
+            backgroundSound.Stop();
+            victorySound.Play();
         }
         
     }
