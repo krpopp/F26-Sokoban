@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - block
+  - player
+  - Rug
+  - Trapdoor
+  - Ladder
+  - Couch
   layers:
   - Default
   - TransparentFX
