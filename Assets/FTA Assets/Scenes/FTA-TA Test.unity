@@ -1284,43 +1284,25 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.46633807
-      outSlope: 0.46633807
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.24166666
-    - serializedVersion: 3
-      time: 0.2893417
-      value: 0.37415105
-      inSlope: 0.16411744
-      outSlope: 0.16411744
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.62558687
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.81418675
-      value: 0.7466352
-      inSlope: 3.4423716
-      outSlope: 3.4423716
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.060251612
-      outWeight: 0.19843765
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speed: 5
+  speed: 1
   lerpSnapDist: 0.1
   targetPos: {x: 0, y: 0, z: 0}
   canMove: 0

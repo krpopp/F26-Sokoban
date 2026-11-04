@@ -19,6 +19,8 @@ public class FTARecorder : Block
     [SerializeField] float recordedWaitTimeCounter;
     [SerializeField] float timeSinceRecording;
     [SerializeField] float recordingInputCooldown;
+
+    int recordingCounter = 0;
     
     
         // It should count total inputs: if<3 then record, if >= 3 then do recorded actions
@@ -29,6 +31,7 @@ public class FTARecorder : Block
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
+        canMove = false;
         base.Start();
         recordingOne = new Vector2(0, 0);
         recordingTwo = new Vector2(0, 0);
@@ -51,13 +54,12 @@ public class FTARecorder : Block
         inputCounter++;
         if (inputCounter == 1) recordingOne = inputDirection;
         else if (inputCounter == 2) recordingTwo = inputDirection;
-        else if (inputCounter == 3) recordingThree = inputDirection;
-        else if (inputCounter >= 4)
+        else if (inputCounter == 3)
         {
+            recordingThree = inputDirection;
             IsRecording = false;
-            canMove = false;
         }
-
+    
         Debug.Log(inputDirection);
         Debug.Log(inputCounter); 
     }
@@ -66,21 +68,15 @@ public class FTARecorder : Block
     {
         //make these actually record the deltas. MAKE THEM HAPPEN INDEPENDENTLY
         recordedWaitTimeCounter++;
-        if(recordedWaitTimeCounter == recordedActionInterval * Time.deltaTime)
+        if(recordedWaitTimeCounter >= recordedActionInterval * Time.deltaTime)
         {
-            CheckMove(recordingOne);
-        }
-        if(recordedWaitTimeCounter == 2 * recordedActionInterval * Time.deltaTime)
-        {
-            CheckMove(recordingTwo);
-        }
-        if(recordedWaitTimeCounter == 3 * recordedActionInterval * Time.deltaTime)
-        {
-            CheckMove(recordingThree);
-        }
-        if(recordedWaitTimeCounter == 4 * recordedActionInterval * Time.deltaTime)
-        {
-            ResetRecorderBlock();
+            Debug.Log("doing Recorded movement");
+            if(recordingCounter == 0) TryRecordedMove(recordingOne);
+            if(recordingCounter == 1) TryRecordedMove(recordingTwo);
+            if(recordingCounter == 2) TryRecordedMove(recordingThree);
+            if(recordingCounter == 3) ResetRecorderBlock();
+            recordingCounter++;
+            recordedWaitTimeCounter = 0;
         }
     }
 
@@ -100,8 +96,7 @@ public class FTARecorder : Block
 
     public override bool CheckMove(Vector2 _delta)
     {
-        
-        Debug.Log("Called CheckMove!!!");
+        //Debug.Log("Called CheckMove!!!");
         if (IsRecording)
         {
             if (timeSinceRecording >= recordingInputCooldown)
@@ -109,19 +104,33 @@ public class FTARecorder : Block
                 MovementRecording(_delta);
                 timeSinceRecording = 0;
             }
-            return(false);
         }
-        canMove = true;
-        base.CheckMove(_delta);
-        canMove = false;
-        return (true);
+        return (false);
+    }
+    
+    private void TryRecordedMove(Vector2 _delta)
+    {
+        if (State == MoveStates.idle)
+        {
+            State = MoveStates.attemptingMove;
+            if (InGrid(gridPos + _delta))
+            {
+                Cell checkCell = gridManager.gridList[gridPos.x + (int)_delta.x][gridPos.y + (int)_delta.y].GetComponent<Cell>();
+                if (!checkCell.CheckContainObj() ||
+                    CheckHit(checkCell.ContainObj.GetComponent<Block>(), _delta))
+                {
+                    StartMove(checkCell, _delta);
+                }
+            }
+            State = MoveStates.idle;
+        }
     }
     
     void ResetRecorderBlock()
     {
         IsRecording = true;
         inputCounter = 0;
-        canMove = true;
+        recordingCounter = -1;
     }
     
 }
