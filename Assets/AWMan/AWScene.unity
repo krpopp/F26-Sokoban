@@ -6743,8 +6743,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 960848275}
-  - {fileID: 2142525992}
-  - {fileID: 1482909009}
+  - {fileID: 2142525997}
+  - {fileID: 1482909014}
   - {fileID: 2108954131}
   - {fileID: 300488364}
   - {fileID: 870493672}
@@ -10826,11 +10826,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9052823091316436886, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
   m_PrefabInstance: {fileID: 455296794}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &478895880 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8568597536576566572, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
-  m_PrefabInstance: {fileID: 455296794}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &478895881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10951,6 +10946,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478895879}
   m_Mesh: {fileID: -6018108322033485473, guid: ac4adae4dbe8042198792d649b57b7a9, type: 3}
+--- !u!4 &478895885 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8568597536576566572, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
+  m_PrefabInstance: {fileID: 455296794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &481490083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12936,6 +12936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 1667457011}
+  gridManager: {fileID: 303079510}
   activationType: 1
   requiredPizzaName: smoothpizza2
   plateRenderer: {fileID: 0}
@@ -16384,6 +16385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 1808529141}
+  gridManager: {fileID: 1271277458}
   activationType: 0
   requiredPizzaName: 
   plateRenderer: {fileID: 1866582011}
@@ -22714,7 +22716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1109775674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22751,7 +22753,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1462931588}
-  - {fileID: 1333485363}
+  - {fileID: 1333485369}
   - {fileID: 1062718314}
   - {fileID: 599165519}
   - {fileID: 1565725686}
@@ -30654,6 +30656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 1193436829}
+  gridManager: {fileID: 303079510}
   activationType: 0
   requiredPizzaName: 
   plateRenderer: {fileID: 830915024}
@@ -30997,7 +31000,7 @@ Transform:
   m_Children:
   - {fileID: 1259932383}
   - {fileID: 2128855334}
-  - {fileID: 478895880}
+  - {fileID: 478895885}
   - {fileID: 1903908624}
   - {fileID: 1002822969}
   - {fileID: 1043839651}
@@ -31272,6 +31275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PizzaTrigger
   levelManager: {fileID: 1750815563}
+  gridManager: {fileID: 303079510}
   levelNumber: 3
   requiredPizzaName: FinalPizza_Room3
 --- !u!1 &1291764443
@@ -32483,11 +32487,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1333485365}
   m_SourcePrefab: {fileID: 100100000, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
---- !u!4 &1333485363 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8568597536576566572, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
-  m_PrefabInstance: {fileID: 1333485362}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1333485364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9052823091316436886, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
@@ -32613,6 +32612,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333485364}
   m_Mesh: {fileID: -6018108322033485473, guid: ac4adae4dbe8042198792d649b57b7a9, type: 3}
+--- !u!4 &1333485369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8568597536576566572, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
+  m_PrefabInstance: {fileID: 1333485362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1334171891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bbd02ded6b574137879b4651e6d4ddf, type: 3}
@@ -33721,6 +33725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PizzaTrigger
   levelManager: {fileID: 1750815563}
+  gridManager: {fileID: 1109775674}
   levelNumber: 1
   requiredPizzaName: FinalPizza_Room1
 --- !u!54 &1366967480
@@ -35201,6 +35206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 2100249601}
+  gridManager: {fileID: 303079510}
   activationType: 0
   requiredPizzaName: 
   plateRenderer: {fileID: 1574875571}
@@ -36433,11 +36439,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9052823091316436886, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
   m_PrefabInstance: {fileID: 349568533}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1482909009 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8568597536576566572, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
-  m_PrefabInstance: {fileID: 349568533}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1482909010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36558,6 +36559,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482909008}
   m_Mesh: {fileID: -6018108322033485473, guid: ac4adae4dbe8042198792d649b57b7a9, type: 3}
+--- !u!4 &1482909014 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8568597536576566572, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
+  m_PrefabInstance: {fileID: 349568533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1485026899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37255,7 +37261,7 @@ Transform:
   m_GameObject: {fileID: 1501940882}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6895816, y: 0, z: 0, w: 0.724208}
-  m_LocalPosition: {x: -3.57, y: 10.335, z: 4.16}
+  m_LocalPosition: {x: -3.4099998, y: 10.335, z: 3.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38598,6 +38604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 2119829126}
+  gridManager: {fileID: 303079510}
   activationType: 0
   requiredPizzaName: 
   plateRenderer: {fileID: 1692569892}
@@ -43693,6 +43700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 2056075770}
+  gridManager: {fileID: 303079510}
   activationType: 0
   requiredPizzaName: 
   plateRenderer: {fileID: 311572560}
@@ -45526,6 +45534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PizzaTrigger
   levelManager: {fileID: 1750815563}
+  gridManager: {fileID: 1271277458}
   levelNumber: 2
   requiredPizzaName: FinalPizza_Room2
 --- !u!54 &1906268597
@@ -47012,6 +47021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 1833126398}
+  gridManager: {fileID: 1271277458}
   activationType: 1
   requiredPizzaName: pizza1 slide
   plateRenderer: {fileID: 0}
@@ -48138,6 +48148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 1782207901}
+  gridManager: {fileID: 303079510}
   activationType: 1
   requiredPizzaName: pizaslide12
   plateRenderer: {fileID: 0}
@@ -48307,6 +48318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 1022224176}
+  gridManager: {fileID: 303079510}
   activationType: 1
   requiredPizzaName: pizza1 smooth
   plateRenderer: {fileID: 0}
@@ -50608,6 +50620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
   doorController: {fileID: 1782207901}
+  gridManager: {fileID: 303079510}
   activationType: 1
   requiredPizzaName: pizaslide12
   plateRenderer: {fileID: 0}
@@ -51679,11 +51692,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9052823091316436886, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
   m_PrefabInstance: {fileID: 293536002}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2142525992 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8568597536576566572, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
-  m_PrefabInstance: {fileID: 293536002}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2142525993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51804,6 +51812,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142525991}
   m_Mesh: {fileID: -6018108322033485473, guid: ac4adae4dbe8042198792d649b57b7a9, type: 3}
+--- !u!4 &2142525997 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8568597536576566572, guid: 3796767b5e3b443739ed2ae0488c4cca, type: 3}
+  m_PrefabInstance: {fileID: 293536002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
