@@ -1,29 +1,29 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BZ_RoomManager : MonoBehaviour
 {
+    public float points = 0;
+    [SerializeField] AudioSource win;
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        win = GetComponent<AudioSource>();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        /*var Goal = GetComponent<BZ_Goal>();
-        if (Goal.points >= 3)
-        {
-            SceneManager.LoadScene("BZ_Main1");
-        }*/
-    }
-    
     public void ChangeLevel(string sceneName)
     {
+        win.Play();
         SceneManager.LoadScene(sceneName);
     }
     
     public string GetActiveScene()
     {
         return SceneManager.GetActiveScene().name;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("BZ_Main1");
     }
 }

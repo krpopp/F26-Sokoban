@@ -7,6 +7,10 @@ public class BZ_Timer : MonoBehaviour
     [SerializeField] AudioSource lose;
     bool hasPlayed = false;
 
+    float timer = 0f;
+    public float waitTime = 3f;
+    bool hasLost = false;
+    public BZ_RoomManager roomManager ;
     void Start()
     {
         lose = GetComponent<AudioSource>();
@@ -28,11 +32,31 @@ public class BZ_Timer : MonoBehaviour
         int minutes =Mathf.FloorToInt(remainingTime / 60);
         int seconds =Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        
+        if (hasLost)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= waitTime)
+            {
+                timer = 0f;
+                roomManager.Restart();
+            }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            roomManager.Restart();
+        }
     }
     
     void GameOver()
     {
-        lose.Play();
-        hasPlayed = true;
+        if (!hasPlayed)
+        {
+            lose.Play();
+            hasPlayed = true;
+            hasLost = true;
+        }
     }
 }
