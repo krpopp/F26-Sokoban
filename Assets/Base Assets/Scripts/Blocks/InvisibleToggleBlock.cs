@@ -3,36 +3,43 @@ using UnityEngine;
 public class InvisibleToggleBlock : MultiBlock
 {
     public Block[] allBlocks;
+
+    public Block player;
     protected override void Start()
     {
         base.Start();
-
+        
         if (gridManager == null)
         {
             gridManager = FindFirstObjectByType<GridManager>();
         }
 
-        foreach (Block block in allBlocks)
-        {
-            if (block == null) continue;
+        fixGridPositions();
+        updateContainObj();
+        
+        Cell ladderCell = gridManager.gridList[4][4].GetComponent<Cell>();
 
-            // Only initialize blocks that GridManager missed
-            if (block.transform.parent.TryGetComponent<Cell>(out Cell parentCell))
-            {
-                continue;
-            }
-
-            Vector2Int pos = findGridPos(block);
-
-            GameObject cell = gridManager.gridList[pos.x][pos.y];
-
-            block.SetupNewGridBlock(gridManager, cell, pos);
-        }
+        Debug.Log(
+            "Cell (4,4) contains: " +
+            (ladderCell.ContainObj != null
+                ? ladderCell.ContainObj.name
+                : "EMPTY")
+        );
     }
     public override bool CheckMove(Vector2 _delta)
     {
+        /*
+        if (playerIsInRug())
+        {
+            return false;
+        }
+        */
         // The block receiving this method becomes the leader.
         // blockPushed = this;
+        updateContainObj();
+        
+        setAllCanMove(true);
+        
         if (isInObj())
         {
             //if so this object cant move and can be passed through
@@ -137,6 +144,39 @@ public class InvisibleToggleBlock : MultiBlock
         }
     }
     
+        public void updateContainObj()
+    {
+        foreach (MultiBlock rug in followingBlocks)
+        {
+            if (rug == null) continue;
+
+            Cell checkCell = gridManager.gridList[rug.gridPos.x]
+                [rug.gridPos.y].GetComponent<Cell>();
+
+            Block overlappingBlock = null;
+
+            foreach (Block block in allBlocks)
+            {
+                if (block == null) continue;
+
+                if (block.gridPos == rug.gridPos)
+                {
+                    overlappingBlock = block;
+                    break;
+                }
+            }
+
+            if (overlappingBlock != null)
+            {
+                checkCell.ContainObj = overlappingBlock.gameObject;
+            }
+            else
+            {
+                checkCell.ContainObj = rug.gameObject;
+            }
+        }
+    }
+    
     public Vector2Int findGridPos(Block block)
     {
         Vector2Int closestPos = Vector2Int.zero;
@@ -164,6 +204,50 @@ public class InvisibleToggleBlock : MultiBlock
         }
 
         return closestPos;
+    }
+    
+    public void fixGridPositions()
+    {
+        foreach (MultiBlock rug in followingBlocks)
+        {
+            if (rug == null) continue;
+
+            Vector2Int pos = findGridPos(rug);
+
+            rug.gridPos = pos;
+            rug.transform.SetParent(
+                gridManager.gridList[pos.x][pos.y].transform
+            );
+        }
+
+        foreach (Block block in allBlocks)
+        {
+            if (block == null) continue;
+
+            Vector2Int pos = findGridPos(block);
+
+            GameObject cell = gridManager.gridList[pos.x][pos.y];
+
+            block.SetupNewGridBlock(
+                gridManager,
+                cell,
+                pos
+            );
+        }
+    }
+
+    public bool playerIsInRug()
+    {
+        
+        for (int i = 0; i < followingBlocks.Length; i++)
+        {
+            if (player.gridPos == followingBlocks[i].gridPos)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }
