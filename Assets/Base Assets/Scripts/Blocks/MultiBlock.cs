@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class MultiBlock : Block
 {
-    public int numBlocks;
-
     //public GameObject 
     public MultiBlock[] followingBlocks;
 
     //public List<Vector2Int> myCells = new List<Vector2Int>();
     //public List<MultiBlock> blockGroup = new List<MultiBlock>();
-    public Block myObj;
 
     //public Block blockPushed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

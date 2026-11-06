@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class InvisibleToggleBlock : MultiBlock
 {
+    
     public override bool CheckMove(Vector2 _delta)
     {
         // The block receiving this method becomes the leader.
@@ -10,7 +11,7 @@ public class InvisibleToggleBlock : MultiBlock
         {
             //if so this object cant move and can be passed through
             setAllCanMove(false);
-            return false;
+            return true;
         }
         else 
         {
@@ -38,7 +39,8 @@ public class InvisibleToggleBlock : MultiBlock
             
             if (!InGrid(target)) //checking if it will be in grid
             {
-                return false;
+                setAllCanMove(false);
+                return true;
             }
             // if not return false and if so continue
         }//end for 1
@@ -63,7 +65,8 @@ public class InvisibleToggleBlock : MultiBlock
 
             if (checkCell.CheckContainObj() && !partOfMultiBlock)
             {
-                return false;
+                setAllCanMove(false);
+                return true;
             }
         }// end for 2
         
@@ -85,10 +88,7 @@ public class InvisibleToggleBlock : MultiBlock
     {
         for (int i = 0; i < followingBlocks.Length; i++)
         {
-            Cell checkCell = gridManager.gridList
-                    [followingBlocks[i].gridPos.x]
-                [followingBlocks[i].gridPos.y]
-                .GetComponent<Cell>();
+            Cell checkCell = gridManager.gridList[followingBlocks[i].gridPos.x][followingBlocks[i].gridPos.y].GetComponent<Cell>();
 
             if (checkCell.CheckContainObj() &&
                 checkCell.ContainObj != followingBlocks[i].gameObject)
