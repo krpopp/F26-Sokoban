@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Trapdoor : Cell
+public class Trapdoor : Block
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject ladder;
@@ -14,37 +14,14 @@ public class Trapdoor : Cell
     
     void Start()
     {
-        coveredByRug = (ContainObj != null) && (ContainObj == rug);
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        coveredByRug = (ContainObj != null) && (ContainObj.CompareTag("Rug"));
-        //Debug.Log("Is covered by rug");
-        if (!coveredByRug)
-        {
-            //Debug.Log("Is not covered by rug");
-            hasWalkedOverIt = (ContainObj != null) && (ContainObj == player);
-
-            if (hasWalkedOverIt) //open trapdoor
-            {
-                hasLadderOnIt = (ContainObj != null) && (ContainObj == ladder);
-                
-                if (hasLadderOnIt)
-                {
-                    Debug.Log("Is not covered by rug, has been opened, and ladder is on it");
-                }
-            }
-        }
         
-        hasLadderOnIt = (ContainObj != null) && (ContainObj == ladder);
-                
-        if (hasLadderOnIt)
-        {
-            Debug.Log("Ladder on it");
-        }
     }
     
     
