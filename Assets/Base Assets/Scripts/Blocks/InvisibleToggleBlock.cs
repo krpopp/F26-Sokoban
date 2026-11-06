@@ -2,21 +2,28 @@ using UnityEngine;
 
 public class InvisibleToggleBlock : MultiBlock
 {
-    public bool isInvisible = true;
-
-        //public Block blockPushed;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override bool CheckMove(Vector2 _delta)
     {
         // The block receiving this method becomes the leader.
         // blockPushed = this;
-
+        if (isInObj())
+        {
+            //if so this object cant move and can be passed through
+            setAllCanMove(false);
+            return false;
+        }
+        else 
+        {
+            //else this object can move
+            setAllCanMove(true);
+        }
+        
         // functionality from parent function
         if (State != MoveStates.idle || !canMove)
         {
             return false;
         }
-
+        
         Vector2Int delta = new Vector2Int((int)_delta.x, (int)_delta.y);
         
         //checking that every block in multiblock is not null, is idle, and canMove,and will be in grid if it moves
@@ -43,9 +50,8 @@ public class InvisibleToggleBlock : MultiBlock
 
             Cell checkCell = gridManager.gridList[target.x][target.y].GetComponent<Cell>();
             
-            bool partOfMultiBlock = false; // stores whether cell ur about to move into has a block thats part of multiblock
-            
-            //go through each cell and see if there is a block in the cell it is trying to move to that is not a part of the multiblock
+            bool partOfMultiBlock = false;// stores whether cell ur about to move into has a block thats part of multiblock
+
             for (int j = 0; j < followingBlocks.Length; j++)
             {
                 if (checkCell.ContainObj == followingBlocks[j].gameObject)
@@ -53,14 +59,11 @@ public class InvisibleToggleBlock : MultiBlock
                     partOfMultiBlock = true;
                     break;
                 }
-            } //if the cell is not empty and if the block is not part of the multiblock the call checkHit
+            }
 
             if (checkCell.CheckContainObj() && !partOfMultiBlock)
             {
-                if (checkCell.ContainObj.GetComponent<Block>() == null || !CheckHit(checkCell.ContainObj.GetComponent<Block>(), _delta))
-                {
-                    return false;
-                }
+                return false;
             }
         }// end for 2
         
@@ -75,6 +78,33 @@ public class InvisibleToggleBlock : MultiBlock
             
         }
         return true;
-    }
+    }//end override checkMove
+
     
+    public bool isInObj()
+    {
+        for (int i = 0; i < followingBlocks.Length; i++)
+        {
+            Cell checkCell = gridManager.gridList
+                    [followingBlocks[i].gridPos.x]
+                [followingBlocks[i].gridPos.y]
+                .GetComponent<Cell>();
+
+            if (checkCell.CheckContainObj() &&
+                checkCell.ContainObj != followingBlocks[i].gameObject)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void setAllCanMove(bool canMove)
+    {
+        for (int i = 0; i < followingBlocks.Length; i++)
+        {
+            followingBlocks[i].canMove = canMove;
+        }
+    }
 }

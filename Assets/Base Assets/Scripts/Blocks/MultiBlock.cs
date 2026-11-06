@@ -31,7 +31,7 @@ public class MultiBlock : Block
         //checking that every block in multiblock is not null, is idle, and canMove,and will be in grid if it moves
         for (int i = 0; i < followingBlocks.Length; i++) //making sure every block in mulitblock will be in grid
         {
-            if (followingBlocks[i] == null || followingBlocks[i].State != MoveStates.idle || !followingBlocks[i].canMove) // making sure the block is not null and can move and is in idle state otherwise return false
+            if (followingBlocks[i] == null || followingBlocks[i].State != MoveStates.idle) // making sure the block is not null and can move and is in idle state otherwise return false
             {
                 return false;
             }
@@ -66,9 +66,17 @@ public class MultiBlock : Block
 
             if (checkCell.CheckContainObj() && !partOfMultiBlock)
             {
-                if (checkCell.ContainObj.GetComponent<Block>() == null || !CheckHit(checkCell.ContainObj.GetComponent<Block>(), _delta))
+                Block otherBlock = checkCell.ContainObj.GetComponent<Block>();
+
+                if (otherBlock == null)
                 {
                     return false;
+                }
+
+                if (otherBlock.canMove)
+                {
+                    if (!CheckHit(otherBlock, _delta))
+                        return false;
                 }
             }
         }// end for 2
