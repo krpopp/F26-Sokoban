@@ -116,7 +116,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &2129241795932406917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -254,7 +253,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &4791736739334361779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -392,7 +390,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &5886003711652704092
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -530,7 +527,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &4226612102244484924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -668,7 +664,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &5010993290908128513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -806,7 +801,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &2967305697762695701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -944,7 +938,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &8618517637310377456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1082,7 +1075,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &2634620285456625876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1220,7 +1212,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &8454439147989047496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1358,7 +1349,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &2873542517907188771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1496,7 +1486,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &149932289739507792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1634,7 +1623,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &5289108718172218650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1772,7 +1760,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &3277731096023684533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1910,7 +1897,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &2006448690896055793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2048,7 +2034,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &2215143748967996163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2186,7 +2171,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &582784108312609629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2324,7 +2308,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &4877877210593686483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2462,7 +2445,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &6425279525023512219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2600,7 +2582,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &744187780196342809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2689,7 +2670,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d8afe8b6824842c418f90eeac0de2da5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2850,7 +2831,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &163998365642736443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2988,7 +2968,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &5837630058739885973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3126,7 +3105,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &3063523716393297918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3264,7 +3242,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &4247834180377446061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3402,7 +3379,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &547772285504619205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3540,7 +3516,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &1032350360509626716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3678,7 +3653,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &6516219971210129014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3816,7 +3790,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &8089512834836442810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3954,7 +3927,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &8682179095647584673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4007,10 +3979,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8150355412269667187}
-  - {fileID: 11837833790621186}
   - {fileID: 5398054136710268402}
   - {fileID: 4005297878108709160}
-  - {fileID: 4320857937119027689}
   - {fileID: 3665881329977955727}
   - {fileID: 5864095211203908078}
   - {fileID: 2721865730531504677}
@@ -4187,7 +4157,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &5599532031110185806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4325,7 +4294,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &5501736087622627331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4463,7 +4431,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &5292078544795392768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4601,7 +4568,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &8040832443167761170
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4739,7 +4705,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &8096532893131734370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4877,7 +4842,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &9171708779318155350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5015,7 +4979,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &9000836128501587498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5153,7 +5116,6 @@ MonoBehaviour:
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
-  state: 0
 --- !u!65 &5116514311174509290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5175,68 +5137,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.19999999, z: 1}
   m_Center: {x: 0, y: 0.099999994, z: 0}
---- !u!1001 &2841312482302620508
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 239348549512923595}
-    m_Modifications:
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6269110327435480138, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-      propertyPath: m_Name
-      value: Sturdy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
---- !u!4 &4320857937119027689 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2060568081434923701, guid: 7e90a684241f24e2ca93f0681ad73709, type: 3}
-  m_PrefabInstance: {fileID: 2841312482302620508}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3777023799991170129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5247,7 +5147,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 287951171314832761, guid: 6729e5cc0d8ac4c30986f218f542e143, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 8.54
       objectReference: {fileID: 0}
     - target: {fileID: 287951171314832761, guid: 6729e5cc0d8ac4c30986f218f542e143, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5374,66 +5274,4 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2259040879024007569, guid: f51cbbce7068b483cae8c3fca45c8e23, type: 3}
   m_PrefabInstance: {fileID: 6174439585011887203}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8845400391195978292
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 239348549512923595}
-    m_Modifications:
-    - target: {fileID: 3440354009316116336, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_Name
-      value: Slide
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
---- !u!4 &11837833790621186 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8857211265879534646, guid: 2fa3846e557064f4aa7914ccd93bd51f, type: 3}
-  m_PrefabInstance: {fileID: 8845400391195978292}
   m_PrefabAsset: {fileID: 0}

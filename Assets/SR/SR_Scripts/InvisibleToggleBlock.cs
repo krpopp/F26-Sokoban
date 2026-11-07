@@ -16,15 +16,7 @@ public class InvisibleToggleBlock : MultiBlock
 
         fixGridPositions();
         updateContainObj();
-        
-        Cell ladderCell = gridManager.gridList[4][4].GetComponent<Cell>();
 
-        Debug.Log(
-            "Cell (4,4) contains: " +
-            (ladderCell.ContainObj != null
-                ? ladderCell.ContainObj.name
-                : "EMPTY")
-        );
     }
     public override bool CheckMove(Vector2 _delta)
     {
@@ -37,7 +29,6 @@ public class InvisibleToggleBlock : MultiBlock
         updateContainObj();
         
         setAllCanMove(true);
-        Debug.Log("Rug occupied: " + isInObj());
 
         if (isInObj())
         {
@@ -60,7 +51,6 @@ public class InvisibleToggleBlock : MultiBlock
         {
             if (followingBlocks[i] == null)
             {
-                Debug.LogError("Missing block in followingBlocks!");
                 return false;
             }
 
