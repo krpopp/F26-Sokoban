@@ -3,25 +3,34 @@ using UnityEngine;
 public class Trapdoor : Block
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject ladder;
-    //public GameObject couch;
-    public GameObject rug;
-    public GameObject player;
     
-    bool coveredByRug; //check has rug on it
-    bool hasLadderOnIt;
-    bool hasWalkedOverIt;
-    
-    void Start()
-    {
-        
+    public InvisibleToggleBlock[] rugBlocks;
 
+    public Block ladder;
+    
+
+    public bool checkInteractWithLadder()
+    {
+        if (ladder.gridPos == gridPos)
+        {
+            return true;
+        }
+
+        return false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool IsCoveredByRug()
     {
-        
+        for (int i = 0; i < rugBlocks.Length; i++)
+        {
+            Vector2Int rugPos = rugBlocks[i].gridPos;
+            if (gridPos == rugPos)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
     
     
