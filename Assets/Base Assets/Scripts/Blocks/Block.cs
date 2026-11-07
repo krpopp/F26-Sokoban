@@ -134,10 +134,6 @@ public class Block : MonoBehaviour
                 yield return null;
             }
         }
-        if (Vector3.Distance(transform.position, targetPos) <= lerpSnapDist)
-        {
-            FinishMove();
-        }
         moveCoroutine = null;
     }
 
