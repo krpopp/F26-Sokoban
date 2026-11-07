@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8328294464219712140}
   - component: {fileID: 6752028084059856965}
   m_Layer: 0
-  m_Name: CSPSturdy
+  m_Name: Sturdy
   m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,9 +29,9 @@ Transform:
   m_GameObject: {fileID: 6269110327435480138}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.0263, y: 0.23789, z: 0.010364}
-  m_LocalScale: {x: 0.5084415, y: 0.5084415, z: 0.5084415}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -4, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6269110327435480138}
-  m_Mesh: {fileID: -3603787154752916399, guid: be8a40b01e710fa40b7103437021c56d, type: 3}
+  m_Mesh: {fileID: 1490014688594724021, guid: 81b8f7b75de0f419b8df3955189b2637, type: 3}
 --- !u!23 &2489221349189286206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,12 +63,10 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6538903991835684241, guid: be8a40b01e710fa40b7103437021c56d, type: 3}
+  - {fileID: -6538903991835684241, guid: 81b8f7b75de0f419b8df3955189b2637, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,11 +84,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8328294464219712140
 MonoBehaviour:
@@ -112,7 +108,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   speed: 0
   lerpSnapDist: 0
-  targetPos: {x: 0, y: 0, z: 0}
   canMove: 0
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
@@ -135,5 +130,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7388023, y: 1.7132735, z: 1.8746418}
-  m_Center: {x: -0.037579924, y: 0.85663676, z: -0.03213318}
+  m_Size: {x: 0.50000006, y: 0.5, z: 0.50000006}
+  m_Center: {x: 0, y: 0.25, z: 0}
