@@ -31,7 +31,7 @@ public class InvisibleToggleBlock : MultiBlock
         //Debug.Log("Player is in rug: " + playerIsInRug());
         if (playerIsInRug())
         {
-            return true;
+            return false;
         }
         
         updateContainObj();
