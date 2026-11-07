@@ -28,18 +28,17 @@ public class InvisibleToggleBlock : MultiBlock
     }
     public override bool CheckMove(Vector2 _delta)
     {
-        /*
+        //Debug.Log("Player is in rug: " + playerIsInRug());
         if (playerIsInRug())
         {
-            return false;
+            return true;
         }
-        */
-        // The block receiving this method becomes the leader.
-        // blockPushed = this;
+        
         updateContainObj();
         
         setAllCanMove(true);
-        
+        Debug.Log("Rug occupied: " + isInObj());
+
         if (isInObj())
         {
             //if so this object cant move and can be passed through
@@ -92,7 +91,8 @@ public class InvisibleToggleBlock : MultiBlock
 
             for (int j = 0; j < followingBlocks.Length; j++)
             {
-                if (checkCell.ContainObj == followingBlocks[j].gameObject)
+                //if (checkCell.ContainObj == followingBlocks[j].gameObject)
+                if (target == followingBlocks[j].gridPos)
                 {
                     partOfMultiBlock = true;
                     break;
