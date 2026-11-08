@@ -11,23 +11,22 @@ public class Ladder : Block
     protected override void Start()
     {
         base.Start();
-
+        
+        if (gridManager == null)
+        {
+            gridManager = FindFirstObjectByType<GridManager>();
+        }
+        
         gridPos = findGridPos(this);
     }
     void Update()
     {
         if (!trapdoor.IsCoveredByRug())
         {
-            Debug.Log("Is not covered by rug");
             if (trapdoor.checkInteractWithLadder())
             {
-                Debug.Log("ladder is on trapdoor");
                 sceneManager.goToNextScene();
             }
-        }
-        else
-        {
-            Debug.Log("Is covered by rug");
         }
     }
 

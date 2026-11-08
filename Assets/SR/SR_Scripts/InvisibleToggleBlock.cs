@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InvisibleToggleBlock : MultiBlock
@@ -18,9 +19,15 @@ public class InvisibleToggleBlock : MultiBlock
         updateContainObj();
 
     }
+
+    public void Update()
+    {
+        isInObj();
+    }
+
     public override bool CheckMove(Vector2 _delta)
     {
-        //Debug.Log("Player is in rug: " + playerIsInRug());
+
         if (playerIsInRug())
         {
             return false;
@@ -115,14 +122,11 @@ public class InvisibleToggleBlock : MultiBlock
         for (int i = 0; i < followingBlocks.Length; i++)
         {
             Cell checkCell = gridManager.gridList[followingBlocks[i].gridPos.x][followingBlocks[i].gridPos.y].GetComponent<Cell>();
-
-            if (checkCell.CheckContainObj() &&
-                checkCell.ContainObj != followingBlocks[i].gameObject)
-            {
+            if (checkCell.CheckContainObj() && checkCell.ContainObj != followingBlocks[i].gameObject) {
+                Debug.Log("RUG BLOCKED! Rug piece: " + followingBlocks[i].name + " at " + followingBlocks[i].gridPos + " | Cell contains: " + checkCell.ContainObj.name);
                 return true;
             }
         }
-
         return false;
     }
 

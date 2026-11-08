@@ -14,9 +14,6 @@ public class Trapdoor : Block
 
         gridManager = FindFirstObjectByType<GridManager>();
 
-        Debug.Log("Trapdoor GridManager: " + gridManager);
-        Debug.Log("Grid List: " + gridManager.gridList);
-
         gridPos = findGridPos(this);
     }
     

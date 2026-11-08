@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class SceneManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    string currentScene = "Level_1";
-    string nextScene = "Level_2";
+    int[] scenes = { 0, 1, 2 };
+    
 
     // Update is called once per frame
     void Update()
@@ -18,14 +18,18 @@ public class SceneManager : MonoBehaviour
 
     public void goToNextScene()
     {
-        if (nextScene != null)
+        int i = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        
+        if (i + 1 < scenes.Length)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(i + 1);
         }
     }
 
     public void reloadScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene);
+        int i = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        
+        UnityEngine.SceneManagement.SceneManager.LoadScene(i);
     }
 }

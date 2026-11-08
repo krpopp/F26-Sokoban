@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SR/SR_Scenes/Level_1.unity
     guid: da2d84edd846ac040a3254551db3e47a
+  - enabled: 1
+    path: Assets/SR/SR_Scenes/Level_2.unity
+    guid: 728485e7dca4dd945a159f175f59cb79
+  - enabled: 1
+    path: Assets/SR/SR_Scenes/Level_3.unity
+    guid: 5091a3ee94fa94e4184040c9f1a06a91
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
