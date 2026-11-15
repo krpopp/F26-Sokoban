@@ -10,7 +10,9 @@ public class BZ_Timer : MonoBehaviour
     float timer = 0f;
     public float waitTime = 3f;
     bool hasLost = false;
-    public BZ_RoomManager roomManager ;
+    public BZ_RoomManager roomManager;
+    public BZ_Goal goal;
+    
     void Start()
     {
         lose = GetComponent<AudioSource>();
@@ -47,6 +49,13 @@ public class BZ_Timer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             roomManager.Restart();
+            goal.hasWon = false;
+        }
+
+        if (goal.hasWon)
+        {
+            Debug.Log("YOOO");
+            Destroy(gameObject);
         }
     }
     

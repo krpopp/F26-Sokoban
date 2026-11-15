@@ -4,10 +4,19 @@ using UnityEngine.SceneManagement;
 public class BZ_Goal : Slidey
 {
     [SerializeField] private Vector2Int targetCell;
+    [SerializeField] AudioSource lose;
+
+    [SerializeField] AudioClip winner;
     //[SerializeField] public float points;
     [SerializeField] AudioClip collect;
     public BZ_RoomManager roomManager;
 
+    public bool hasWon = false;
+
+    void Start()
+    {
+        base.Start();
+    }
     protected override void FinishMove()
     {
         base.FinishMove();
@@ -30,9 +39,28 @@ public class BZ_Goal : Slidey
 
             if (roomManager.points >= 3 && roomManager.GetActiveScene() == "BZ_Main3")
             {
-                //WIN!!
+                AudioSource.PlayClipAtPoint(winner, transform.position);
+                hasWon = true;
             }
             //Debug.Log("ur da winner");
         }
+    }
+
+    protected override bool CheckHit(Block _hitObj, Vector2 _delta)
+    {
+        if (_hitObj.gameObject.GetComponent<BZ_Lion>() != null)
+        {
+            PlayLoseSound();
+            Destroy(gameObject);
+            return false;
+        }
+
+        if (GetComponent<Slidey>() == null && _hitObj.CheckMove(_delta)) return true;
+        return false;
+    }
+    
+    void PlayLoseSound()
+    {
+        AudioSource.PlayClipAtPoint(lose.clip, transform.position, lose.volume);
     }
 }

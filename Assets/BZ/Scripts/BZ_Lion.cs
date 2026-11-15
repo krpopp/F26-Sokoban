@@ -7,6 +7,7 @@ public class BZ_Lion : Block
 
     void Start()
     {
+        base.Start();
         lose = GetComponent<AudioSource>();
     }
     protected override bool CheckHit(Block _hitObj, Vector2 _delta)
