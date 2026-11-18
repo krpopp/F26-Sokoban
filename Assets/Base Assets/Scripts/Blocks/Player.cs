@@ -23,7 +23,6 @@ public class Player : Block
 
     private void MoveInput()
     {
-
         inputVector = inputMove.ReadValue<Vector2>();
         if (inputVector != Vector2.zero) TurnAndMove();
     }

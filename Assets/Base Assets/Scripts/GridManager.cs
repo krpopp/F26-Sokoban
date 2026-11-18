@@ -88,6 +88,7 @@ public class GridManager : MonoBehaviour
                 //if this sphere cast hits something
                 if (Physics.SphereCast(checkSpot, raycastRadius, transform.up, out hit, raycastDistance))
                 {
+                    print(hit.collider.name);
                     //and if that something is either a block or the player
                     if (hit.collider.CompareTag("block") || hit.collider.CompareTag("Player"))
                     {
