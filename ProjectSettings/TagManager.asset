@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - block
+  - player
+  - Rug
+  - Trapdoor
+  - Ladder
+  - Couch
+  - GameOver
   layers:
   - Default
   - TransparentFX
@@ -51,3 +57,4 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
+  m_MigratedRenderPipelines: []
