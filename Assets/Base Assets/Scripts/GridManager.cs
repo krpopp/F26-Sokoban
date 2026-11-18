@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Collections;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GridManager : MonoBehaviour
 {
@@ -37,9 +38,16 @@ public class GridManager : MonoBehaviour
 
     public List<List<GameObject>> gridList = new List<List<GameObject>>();
 
+    private InputAction resetButton;
+    
     private void Awake()
     {
         MakeGrid();
+    }
+
+    private void Start()
+    {
+        resetButton = InputSystem.actions.FindAction("Reset");
     }
 
     /// <summary>
@@ -96,13 +104,28 @@ public class GridManager : MonoBehaviour
     /// </summary>
     private void AddDebugUI(Vector3 _pos, Vector2 _gridPos)
     {
-        _pos.y = debugY;
-        GameObject newLabel = Instantiate(label, _pos, Quaternion.identity, canvas.transform);
-        newLabel.GetComponent<TMP_Text>().text = _gridPos.x + "," + _gridPos.y;
+        if (canvas != null)
+        {
+            _pos.y = debugY;
+            GameObject newLabel = Instantiate(label, _pos, Quaternion.identity, canvas.transform);
+            newLabel.GetComponent<TMP_Text>().text = _gridPos.x + "," + _gridPos.y;
+        }
+        else
+        {
+            Debug.Log("Can't load debug overlay because no canvas was assigned!");
+        }
     }
     
     public void UpdateGrid()
     {
         BroadcastMessage("GridChanged");
+    }
+
+    private void Update()
+    {
+        if (debugMode && resetButton.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

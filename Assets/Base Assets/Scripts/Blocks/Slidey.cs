@@ -1,16 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Slidey : Block
 {
+ 
     protected override void FinishMove()
     {
         base.FinishMove();
         Slide(moveChange);
     }
 
-    private void Slide(Vector2 _delta)
+    protected virtual void Slide(Vector2 _delta)
     {
         CheckMove(_delta);
+        Debug.Log("X: " + transform.position.x + ", Y: " + transform.position.y);
     }
 
 }
