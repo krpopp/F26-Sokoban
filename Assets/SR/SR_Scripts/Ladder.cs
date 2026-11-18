@@ -7,7 +7,7 @@ public class Ladder : Block
 
     public Trapdoor trapdoor;
 
-    public SceneManager sceneManager;
+    public SRSceneManager sceneManager;
     protected override void Start()
     {
         base.Start();
