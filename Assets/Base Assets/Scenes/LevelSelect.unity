@@ -1058,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saia Rodriguez
       objectReference: {fileID: 0}
+    - target: {fileID: 1392135462432951641, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5250663203104664792, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
       propertyPath: m_text
       value: 'Saia Rodriguez
@@ -1098,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034493309090916045, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
       propertyPath: m_Interactable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9034493309090916045, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1860,6 +1864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Francisco Alban
       objectReference: {fileID: 0}
+    - target: {fileID: 1392135462432951641, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5250663203104664792, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
       propertyPath: m_text
       value: Francisco Alban
@@ -1898,7 +1906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034493309090916045, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
       propertyPath: m_Interactable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9034493309090916045, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3305,7 +3313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 1171144407}
+  m_FirstSelected: {fileID: 932734160}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1829850146
@@ -4031,7 +4039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneControl
   scaleIn: 0
-  nextScene: PTCBaseLevel
+  nextScene: PTClevelone
   sceneAnimation: {fileID: 1920359133}
 --- !u!1001 &574449064330054858
 PrefabInstance:
@@ -4124,6 +4132,10 @@ PrefabInstance:
     - target: {fileID: 1392135462432951641, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
       propertyPath: m_Name
       value: Demo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392135462432951641, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5250663203104664792, guid: 016d92b51a94b4b2db5197a0ec843af1, type: 3}
       propertyPath: m_fontSize

@@ -39,8 +39,9 @@ public class BZ_Goal : Slidey
 
             if (roomManager.points >= 3 && roomManager.GetActiveScene() == "BZ_Main3")
             {
-                AudioSource.PlayClipAtPoint(winner, transform.position);
-                hasWon = true;
+                //AudioSource.PlayClipAtPoint(winner, transform.position);
+                //hasWon = true;
+                roomManager.ChangeLevel("LevelSelect");
             }
             //Debug.Log("ur da winner");
         }

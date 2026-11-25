@@ -5159,7 +5159,7 @@ MonoBehaviour:
   - {fileID: 9000000697}
   goalOff: {fileID: 2100000, guid: e6a88f64d9730f34ba0296d504cbcf39, type: 2}
   goalOn: {fileID: 2100000, guid: 0ee87103d57768d4d968ef74cc40dce3, type: 2}
-  roomNumber: 3
+  roomNumber: 1
   nextScenePath: 
   autoAdvance: 0
   advanceDelay: 1.5
